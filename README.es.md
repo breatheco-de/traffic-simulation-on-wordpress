@@ -1,4 +1,4 @@
-# Simulación de trafico en wordpress
+# Simulación de trafico al sitio wordpress
 
 <!-- hide -->
 
