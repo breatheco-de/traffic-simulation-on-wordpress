@@ -15,7 +15,8 @@
 
 ## 📝 Instructions
 
-In this practicum you will learn how to deploy a Wordpress website, which you will then use in your cybersecurity lab. With this work you will understand how a web server works from the inside, as well as you will have a service to which you can do monitoring and security tests to reinforce the skills you will acquire throughout the course.
+In this practice, you will learn how to generate artificial traffic on the WordPress site and implement monitoring tools to detect surges in requests and evaluate the server's performance.
+
 
 <!-- hide -->
 ### Before you start...
@@ -32,7 +33,7 @@ In this practicum you will learn how to deploy a Wordpress website, which you wi
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
-1. [Arnaldo Perez (arnaloperez)](https://github.com/arnaloperez) contribution: (build-tutorial) ✅, (documentation) 📖
+1. [Rosinni Rodríguez (rosinni)](https://github.com/rosinni) contribution: (build-tutorial) ✅, (documentation) 📖
   
 2. [Alejandro Sanchez (alesanchezr)](https://github.com/alesanchezr),  contribution: (bug reports) 🐛
 
