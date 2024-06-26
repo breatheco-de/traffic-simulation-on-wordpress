@@ -72,7 +72,7 @@ Con "Adaptador puente" configurado, las máquinas deberían obtener una direcci�
 ```bash
 $ ip addr show
 ```
-> Busca la sección correspondiente a tu interfaz de red (usualmente eth0 o enp0s3) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como 192.168.1.x.
+> Busca la sección correspondiente a tu interfaz de red (usualmente `eth0` o `enp0s3`) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como `192.168.1.x`.
 
 #### En la Máquina Kali Linux (Atacante):
 * Inicia la máquina virtual Kali Linux.
