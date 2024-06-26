@@ -60,7 +60,7 @@ To carry out this project, we will need 2 virtual machines. One will be the Debi
 * Save the changes and close the settings window.
 
 
-![Configurar maquina virtual](assets\config-virtual-machine.png)
+![Configurar maquina virtual](assets/config-virtual-machine.png)
 
 
 
