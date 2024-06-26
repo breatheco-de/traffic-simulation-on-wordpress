@@ -1,5 +1,8 @@
 # Simulación de trafico al sitio wordpress
 
+Este proyecto tiene como objetivo generar tráfico artificial desde una máquina Kali Linux hacia un sitio web alojado en un servidor Debian, utilizando la herramienta Apache Benchmark (ab). Además, se implementarán herramientas de monitoreo en el servidor para detectar las oleadas de peticiones y evaluar su desempeño.
+
+
 <!-- hide -->
 
 > By [@rosinni](https://github.com/rosinni) and [other contributors](https://github.com/4GeeksAcademy/deploying-wordpress-debian/graphs/contributors) at [4Geeks Academy](https://4geeksacademy.co/)
@@ -14,6 +17,7 @@
 
 <!-- hide -->
 
+
 ### Antes de empezar...
 
 > ¡Te necesitamos! Estos ejercicios se crean y mantienen en colaboración con personas como tú. Si encuentras algún error o falta de ortografía, contribuye y/o repórtalo.
@@ -24,7 +28,7 @@
 
 ### Instalación local:
 
-Clona el repositorio en tu ambiente local [repositorio](https://github.com/breatheco-de/traffic-simulation-on-wordpress).
+Clona el repositorio en tu ambiente local [repositorio](https://github.com/breatheco-de/traffic-simulation-on-wordpress) y sigue las instrucciones en el archivo readme.
 
 <!-- 1. Instala LearnPack, el package manager para tutoriales de aprendizaje y el HTML compiler plugin para LearnPack, asegúrate también de tener node.js 14+:
 
@@ -51,17 +55,18 @@ $ learnpack start
 
 hide -->
 
-## 📝 Instrucciones
-
-En ésta práctica aprenderás como generar tráfico artificial en el sitio Wordpress e implementarás herramientas de monitoreo para detectar las oleadas de peticiones y evaluar el desempeño del servidor.
-
-IMPORTANTE: Para llevar a cabo este proyecto vamos a necesitar 2 maquinas virtuales. Una de ellas será la maquina virtual de debian donde construimos el sitio web de wordpress anteriormente.
-
-### ¿Qué computadoras vamos a utilizar?
 
 
+
+### Requisitos
+
+Para llevar a cabo este proyecto vamos a necesitar 2 maquinas virtuales. Una de ellas será la maquina virtual de debian donde construimos el sitio web de wordpress anteriormente y la otra la maquina atacante con kali.
+
+* Oracle VirtualBox
 * Máquina virtual con Kali Linux (Atacante): Para generar el tráfico.
 * Máquina virtual con Debian (Servidor Web): Donde tenemos alojado el servidor Apache y el sitio WordPress.
+
+## 📝 Instrucciones
 
 ### Paso 1: Configurar la Red en VirtualBox
 
@@ -70,7 +75,7 @@ IMPORTANTE: Para llevar a cabo este proyecto vamos a necesitar 2 maquinas virtua
 * Selecciona tu máquina virtual con Debian y haz clic en "Configuración".
 * Ve a la sección "Red".
 * Asegúrate de que el "Adaptador 1" esté habilitado y configurado como "Adaptador puente".
-* Selecciona el adaptador de red física de tu host que deseas usar para la conexión (puede ser Wi-Fi o Ethernet).
+* En el campo "Nombre", selecciona el adaptador de red física que deseas usar (el que tu host está utilizando para conectarse a la red, como Wi-Fi o Ethernet). Esto suele ser algo como "Intel(R) Ethernet Connection" o "Wi-Fi".
 * Guarda los cambios y cierra la ventana de configuración.
 
 
@@ -78,9 +83,10 @@ IMPORTANTE: Para llevar a cabo este proyecto vamos a necesitar 2 maquinas virtua
 * Selecciona tu máquina virtual con Kali Linux y haz clic en "Configuración".
 * Ve a la sección "Red".
 * Asegúrate de que el "Adaptador 1" esté habilitado y configurado como "Adaptador puente".
-* Selecciona el mismo adaptador de red física de tu host que seleccionaste para la máquina Debian.
+* En el campo "Nombre", selecciona el mismo adaptador de red física que seleccionaste para la máquina Debian.
 * Guarda los cambios y cierra la ventana de configuración.
-# COLOCAR IMAGEN
+
+![Configurar maquina virtual](assets\config-virtual-machine.png)
 
 ### Paso 2: Obtener la Dirección IP de las Máquinas para poderlas conectar entre sí.
 
@@ -102,7 +108,8 @@ $ ip addr show
 $ ip addr show
 ```
 
-> Busca la sección correspondiente a tu interfaz de red (usualmente eth0 o enp0s3) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como 192.168.1.x.
+> Busca la sección correspondiente a tu interfaz de red (usualmente `eth0` o `enp0s3`) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como `192.168.1.x`.
+
 
 ### PASO 3: Verificar la Conexión Entre las Máquinas
 
@@ -124,7 +131,8 @@ $ ping <IP_kali>
 
 > Reemplaza <IP_kali> con la dirección IP que obtuviste para la máquina Kali.
 
-# ANEXAR IMAGEN DE COMO SE VA VER SI ESTÁN CONECTADAS
+Ejemplo gráfico de cómo se ven los ping al estar conectados
+![verificación de conexión entre las maquinas virtuales](assets\ping-view.png)
 
 
 ### PASO 4: Simular Tráfico en el Sitio Web
@@ -132,7 +140,56 @@ $ ping <IP_kali>
 #### En la Máquina Kali Linux (Atacante):
 Usaremos como herramienta ab (Apache Benchmark) para generar tráfico en el sitio web. 
 
-COLOCA ACA LAS INSTRUCCIONES DE APACHE BENCHMARK
+#### Instalación y Uso de Apache Benchmark
+Apache Benchmark (ab) es una herramienta que permite generar tráfico de prueba hacia un servidor web. Sigue estos pasos para instalar y usar ab desde Kali Linux:
+1. Instalación de Apache Benchmark
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get install apache2-utils
+```
+bash
+sudo apt-get update
+sudo apt-get install apache2-utils
+
+2. Generar Tráfico hacia el Sitio Web
+
+```bash
+$ ab -n 1000 -c 10 http://<IP_debian>/
+```
+***El comando `ab -n 1000 -c 10 http://<IP_debian>/` hará que Apache Bench envíe 1000 peticiones HTTP al servidor web en la dirección http://<IP_debian>/, con 10 peticiones realizándose al mismo tiempo, simulando 10 usuarios concurrentes accediendo al servidor.***
+
+> NOTA: Reemplaza <IP_debian> con la dirección IP del servidor Debian.
+
+
+### Paso 5: Monitoreo del Desempeño del Servidor
+En el servidor Debian, vamos a instalar herramientas de monitoreo como htop y nmon para observar el desempeño durante las pruebas.
+
+#### Instalación de htop y nmon
+```bash
+$ sudo apt-get update
+$ sudo apt-get install htop
+$ sudo apt-get install nmon
+```
+
+
+
+### Monitoreo en Tiempo Real
+
+Ejecuta htop o nmon en una terminal para monitorear el uso de CPU, memoria y otros recursos del sistema en tiempo real mientras se ejecutan las pruebas con Apache Benchmark.
+
+### Monitoreo con htop:
+
+Herramienta interactiva de monitoreo de procesos que proporciona una visión detallada del uso de recursos del sistema.
+
+![monitoreo con htop](assets\monitor-htop.png)
+
+
+* CPU Usage (Uso de CPU): Muestra el uso de la CPU en tiempo real, generalmente dividido en barras que representan cada núcleo de la CPU.
+* Memory Usage (Uso de Memoria): Muestra el uso de la memoria RAM y swap.
+* Tasks (Tareas/Procesos): Lista de procesos activos, con detalles como el PID, usuario, uso de CPU y memoria, * tiempo de ejecución, y el comando que inició el proceso.
+* Load Average (Carga Media): Muestra el promedio de carga del sistema en los últimos 1, 5 y 15 minutos.
+* Uptime (Tiempo de Actividad): Indica cuánto tiempo ha estado funcionando el sistema desde el último reinicio.
 
 
 
