@@ -30,32 +30,6 @@ Este proyecto tiene como objetivo generar tráfico artificial desde una máquina
 
 Clona el repositorio en tu ambiente local [repositorio](https://github.com/breatheco-de/traffic-simulation-on-wordpress) y sigue las instrucciones en el archivo readme.
 
-<!-- 1. Instala LearnPack, el package manager para tutoriales de aprendizaje y el HTML compiler plugin para LearnPack, asegúrate también de tener node.js 14+:
-
-```bash
-$ npm i learnpack -g
-$ learnpack plugins:install learnpack-html
-```
-
-2. Descarga estos ejercicios en particular usando LearnPack y luego `cd` para entrar en la carpeta:
-
-```bash
-$ learnpack download html-forms-tutorial-exercises
-$ cd html-forms-tutorial-exercises
-```
-
-> Nota: Una vez que termines de descargar, encontrarás una carpeta "exercises" que contiene todos los ejercicios.
-
-3. Inicializa el tutorial/ejercicios ejecutando el siguiente comando en el mismo nivel donde se encuentra tu archivo learn.json:
-
-```bash
-$ npm i jest@24.8.0 -g
-$ learnpack start
-```
-
-hide -->
-
-
 
 
 ### Requisitos
@@ -187,7 +161,7 @@ Herramienta interactiva de monitoreo de procesos que proporciona una visión det
 
 * CPU Usage (Uso de CPU): Muestra el uso de la CPU en tiempo real, generalmente dividido en barras que representan cada núcleo de la CPU.
 * Memory Usage (Uso de Memoria): Muestra el uso de la memoria RAM y swap.
-* Tasks (Tareas/Procesos): Lista de procesos activos, con detalles como el PID, usuario, uso de CPU y memoria, * tiempo de ejecución, y el comando que inició el proceso.
+* Tasks (Tareas/Procesos): Lista de procesos activos, con detalles como el PID, usuario, uso de CPU y memoria tiempo de ejecución, y el comando que inició el proceso.
 * Load Average (Carga Media): Muestra el promedio de carga del sistema en los últimos 1, 5 y 15 minutos.
 * Uptime (Tiempo de Actividad): Indica cuánto tiempo ha estado funcionando el sistema desde el último reinicio.
 
