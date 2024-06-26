@@ -72,7 +72,7 @@ Con "Adaptador puente" configurado, las máquinas deberían obtener una direcci�
 ```bash
 $ ip addr show
 ```
-> Busca la sección correspondiente a tu interfaz de red (usualmente eth0 o enp0s3) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como 192.168.1.x.
+> ***Busca la sección correspondiente a tu interfaz de red (usualmente eth0 o enp0s3) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como 192.168.1.x.***
 
 #### En la Máquina Kali Linux (Atacante):
 * Inicia la máquina virtual Kali Linux.
@@ -82,7 +82,7 @@ $ ip addr show
 $ ip addr show
 ```
 
-> Busca la sección correspondiente a tu interfaz de red (usualmente `eth0` o `enp0s3`) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como `192.168.1.x`.
+> ***Busca la sección correspondiente a tu interfaz de red (usualmente `eth0` o `enp0s3`) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como `192.168.1.x`.***
 
 
 ### PASO 3: Verificar la Conexión Entre las Máquinas
@@ -122,9 +122,6 @@ Apache Benchmark (ab) es una herramienta que permite generar tráfico de prueba 
 $ sudo apt-get update
 $ sudo apt-get install apache2-utils
 ```
-bash
-sudo apt-get update
-sudo apt-get install apache2-utils
 
 2. Generar Tráfico hacia el Sitio Web
 
@@ -137,25 +134,25 @@ $ ab -n 1000 -c 10 http://<IP_debian>/
 
 
 ### Paso 5: Monitoreo del Desempeño del Servidor
-En el servidor Debian, vamos a instalar herramientas de monitoreo como htop y nmon para observar el desempeño durante las pruebas.
+En el servidor Debian, vamos a instalar herramientas de monitoreo como htop para observar el desempeño durante las pruebas.
 
-#### Instalación de htop y nmon
+#### Instalación de htop
 ```bash
 $ sudo apt-get update
 $ sudo apt-get install htop
-$ sudo apt-get install nmon
 ```
 
 
 
-### Monitoreo en Tiempo Real
+### Monitoreo en Tiempo Real con htop
 
-Ejecuta htop o nmon en una terminal para monitorear el uso de CPU, memoria y otros recursos del sistema en tiempo real mientras se ejecutan las pruebas con Apache Benchmark.
+`htop` es una herramienta interactiva de monitoreo de procesos que proporciona una visión detallada del uso de recursos del sistema. Ejecuta el siguiente comando la terminal para monitorear el uso de CPU, memoria y otros recursos del sistema en tiempo real mientras se ejecutan las pruebas con Apache Benchmark.
 
-### Monitoreo con htop:
 
-Herramienta interactiva de monitoreo de procesos que proporciona una visión detallada del uso de recursos del sistema.
-
+```bash
+$ htop
+```
+Veras algo como esto:
 ![monitoreo con htop](assets/monitor-htop.png)
 
 
@@ -164,6 +161,24 @@ Herramienta interactiva de monitoreo de procesos que proporciona una visión det
 * Tasks (Tareas/Procesos): Lista de procesos activos, con detalles como el PID, usuario, uso de CPU y memoria tiempo de ejecución, y el comando que inició el proceso.
 * Load Average (Carga Media): Muestra el promedio de carga del sistema en los últimos 1, 5 y 15 minutos.
 * Uptime (Tiempo de Actividad): Indica cuánto tiempo ha estado funcionando el sistema desde el último reinicio.
+
+## Entrega
+
+* En el repositorio que se ha clonado entregar un informe con el nombre xxxxx que incluya las siguientes secciones:
+    * Descripción del entorno de prueba.
+    * Resultados de las pruebas con Apache Benchmark.
+    * Descripción de los parámetros utilizados 
+    * Número total de solicitudes enviadas
+    * Tiempo total de la prueba
+    * Solicitudes por segundo
+
+* Crea un informe con el nombre xxxxx que incluya las observaciones del desempeño del servidor usando htop:
+
+    * Incluye la captura de pantalla de htop durante la prueba de carga
+    * Evalue si el servidor pudo manejar la carga de tráfico generada
+    * Especifique cualquier uso excesivo de recursos o cuellos de botella observados
+    * Identifique posibles problemas o limitaciones
+    * Consideraciones para futuras pruebas de carga
 
 
 
