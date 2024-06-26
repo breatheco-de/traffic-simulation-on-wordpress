@@ -6,7 +6,7 @@
     },
     "slug": "traffic-simulation-on-wordpress",
     "description": {
-      "us": "Learn how to make a basic deployment of a website with Wordpress, one of the most popular content management software.",
+      "us": "Learn how to generate artificial traffic on the WordPress site and implement monitoring tools to detect surges in requests and evaluate server performance.",
       "es": "Aprende como generar tráfico artificial en el sitio Wordpress e implementa herramientas de monitoreo para detectar las oleadas de peticiones y evaluar el desempeño del servidor."
     },
     "grading": "isolated",
