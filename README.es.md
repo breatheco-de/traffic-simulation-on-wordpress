@@ -60,7 +60,7 @@ Para llevar a cabo este proyecto vamos a necesitar 2 maquinas virtuales. Una de 
 * En el campo "Nombre", selecciona el mismo adaptador de red física que seleccionaste para la máquina Debian.
 * Guarda los cambios y cierra la ventana de configuración.
 
-![Configurar maquina virtual](assets\config-virtual-machine.png)
+![Configurar maquina virtual](assets/config-virtual-machine.png)
 
 ### Paso 2: Obtener la Dirección IP de las Máquinas para poderlas conectar entre sí.
 
@@ -106,7 +106,7 @@ $ ping <IP_kali>
 > Reemplaza <IP_kali> con la dirección IP que obtuviste para la máquina Kali.
 
 Ejemplo gráfico de cómo se ven los ping al estar conectados
-![verificación de conexión entre las maquinas virtuales](assets\ping-view.png)
+![verificación de conexión entre las maquinas virtuales](assets/ping-view.png)
 
 
 ### PASO 4: Simular Tráfico en el Sitio Web
@@ -156,7 +156,7 @@ Ejecuta htop o nmon en una terminal para monitorear el uso de CPU, memoria y otr
 
 Herramienta interactiva de monitoreo de procesos que proporciona una visión detallada del uso de recursos del sistema.
 
-![monitoreo con htop](assets\monitor-htop.png)
+![monitoreo con htop](assets/monitor-htop.png)
 
 
 * CPU Usage (Uso de CPU): Muestra el uso de la CPU en tiempo real, generalmente dividido en barras que representan cada núcleo de la CPU.
