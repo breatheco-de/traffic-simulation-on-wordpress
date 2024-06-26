@@ -72,7 +72,7 @@ Con "Adaptador puente" configurado, las máquinas deberían obtener una direcci�
 ```bash
 $ ip addr show
 ```
-> Busca la sección correspondiente a tu interfaz de red (usualmente `eth0` o `enp0s3`) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como `192.168.1.x`.
+> ***Busca la sección correspondiente a tu interfaz de red (usualmente `eth0` o `enp0s3`) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como `192.168.1.x`.***
 
 #### En la Máquina Kali Linux (Atacante):
 * Inicia la máquina virtual Kali Linux.
@@ -164,23 +164,35 @@ Veras algo como esto:
 
 ## Entrega de proyecto
 
-* En el repositorio que se ha clonado entregar un informe con el nombre `test_report_ab.yml` que incluya las siguientes secciones:
-    * Descripción del entorno de prueba.
-    * Resultados de las pruebas con Apache Benchmark.
-    * Descripción de los parámetros utilizados 
-    * Número total de solicitudes enviadas
-    * Tiempo total de la prueba
-    * Solicitudes por segundo
-
-* Crea un informe con el nombre `monitoring_report.yml` que incluya las observaciones del desempeño del servidor usando htop:
-
-    * Incluye la captura de pantalla de htop durante la prueba de carga
-    * Evalue si el servidor pudo manejar la carga de tráfico generada
-    * Especifique cualquier uso excesivo de recursos o cuellos de botella observados
-    * Identifique posibles problemas o limitaciones
-    * Consideraciones para futuras pruebas de carga
+En el repositorio que se ha clonado debes entregar 2 informes.
 
 
+* El primero con el nombre `report_ab.txt`. Este lo debes generar a la hora de hacer el ataque en tu maquina virtual kali, con el siguiente comando:
+
+```bash
+$ ab -n 5000 -c 200 http://<IP_debian>/ > reporte_ab.txt
+```
+
+
+* El segundo lo debes crear con el nombre `report_htop.txt` que incluya las observaciones del desempeño del servidor en tu maquina debian mientras usas htop. 
+
+
+> ***Copia estas lineas en el archivo `report_htop.txt` y llena lo que corresponda.***
+```yml
+  observations:
+  evaluation_if_server_could_handle_load:
+    - performance_metrics:
+        - stable_memory: # Aquí puedes poner con cuantas solicitudes por segundo mantuvo una memoria estable
+        - cpu_load_average: # Aquí puedes poner qué porcentaje de carga promedio mantuvo el CPU
+
+  specification_of_excessive_resource_usage:
+    - cpu_peak_usage:
+        - observed: true  # Indica si se observaste un pico de uso de CPU del 90% durante los primeros minutos de carga máxima (el valor seria true o false)
+        - peak_percentage: 90
+        - request_count_at_peak:
+            - value:  # Aquí puedes poner el número específico de peticiones con el que se hizo el pico
+
+```
 
 
 
