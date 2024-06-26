@@ -64,15 +64,106 @@ To carry out this project, we will need 2 virtual machines. One will be the Debi
 
 
 
+### Step 3: Verify the Connection Between the Machines
+
+#### From the Kali Linux Machine (Attacker):
+* Open a terminal and ping the Debian machine to verify the connection:
+
+```bash
+$ ping <IP_debian>
+```
+
+> Replace <IP_debian> with the IP address you obtained for the Debian machine.
+
+#### From the Debian Machine (Web Server): 
+* Open a terminal and ping the Kali Linux machine to verify the connection:
+
+```bash
+$ ping <IP_kali>
+```
+> Replace <IP_kali> with the IP address you obtained for the Kali machine.
+
+Graphical example of how the pings look when connected:
+![Graphical example of how the pings look when connected:](assets/ping-view.png)
 
 
+### Step 4: Simulate Traffic on the Website
+
+#### On the Kali Linux Machine (Attacker):
+We will use Apache Benchmark (ab) as a tool to generate traffic on the website.
+
+#### Installation and Usage of Apache Benchmark
+Apache Benchmark (ab) is a tool that allows you to generate test traffic to a web server. Follow these steps to install and use ab from Kali Linux:
+1. Installation of Apache Benchmark
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get install apache2-utils
+```
+
+2. Generate Traffic to the Website
+
+```bash
+$ ab -n 1000 -c 10 http://<IP_debian>/
+```
+***The command  `ab -n 1000 -c 10 http://<IP_debian>/` hwill make Apache Bench send 1000 HTTP requests to the web server at http://<IP_debian>/, with 10 requests being made concurrently, simulating 10 concurrent users accessing the server..***
+
+> NOTE: Replace <IP_debian> with the IP address of the Debian server.
 
 
+### Step 5: Monitoring Server Performance
+On the Debian server, we are going to install monitoring tools like htop to observe the performance during the tests.
+
+#### Installing htop
+```bash
+$ sudo apt-get update
+$ sudo apt-get install htop
+```
+
+#### Real-Time Monitoring with htop
+
+`htop` is an interactive process monitoring tool that provides a detailed view of the system resource usage. Run the following command in the terminal to monitor CPU, memory, and other system resources in real-time while running tests with Apache Benchmark.
+
+```bash
+$ htop
+```
+You will see something like this:
+![monitoreo con htop](assets/monitor-htop.png)
 
 
+* **CPU Usage**: Shows real-time CPU usage, usually divided into bars representing each CPU core.
+* **Memory Usage**: Displays RAM and swap memory usage.
+* **Tasks**: Lists active processes with details such as PID, user, CPU and memory usage, runtime, and the command that started the process.
+* **Load Average**: Shows the system load average over the last 1, 5, and 15 minutes.
+* **Uptime**: Indicates how long the system has been running since the last reboot.
 
+## Project Delivery
 
-.
+In the cloned repository, you must submit 2 reports.
+
+* The first report should be named `report_ab.txt`. Generate this report when performing the attack on your Kali virtual machine with the following command:
+
+```bash
+$ ab -n 5000 -c 200 http://<IP_debian>/ > report_ab.txt
+```
+
+* The second report should be created with the name `report_htop.txt` and include observations on the server performance on your Debian machine while using htop.
+
+> ***Copy these lines into the `report_htop.txt` file and fill in the corresponding information.***
+```yml
+  observations:
+  evaluation_if_server_could_handle_load:
+    - performance_metrics:
+        - stable_memory: # Here you can note how many requests per second maintained stable memory usage
+        - cpu_load_average: # Here you can note what average CPU load percentage was maintained
+
+  specification_of_excessive_resource_usage:
+    - cpu_peak_usage:
+        - observed: true  # Indicate if a CPU usage peak of 90% was observed during the first few minutes of maximum load (the value would be true or false)
+        - peak_percentage: 90
+        - request_count_at_peak:
+            - value:  # Here you can note the specific number of requests at which the peak occurred
+```
 
 
 

@@ -11,7 +11,7 @@ Este proyecto tiene como objetivo generar tráfico artificial desde una máquina
 [![build by developers](https://img.shields.io/badge/build_by-Developers-blue)](https://4geeks.com)
 [![build by developers](https://img.shields.io/twitter/follow/4geeksacademy?style=social&logo=twitter)](https://twitter.com/4geeksacademy)
 
-*These instructions are [available in english](https://github.com/4GeeksAcademy/deploying-wordpress-debian/blob/main/README.md)*
+*These instructions are [available in english](https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/README.md)*
 <!-- endhide -->
 
 
@@ -131,6 +131,7 @@ $ ab -n 1000 -c 10 http://<IP_debian>/
 ***El comando `ab -n 1000 -c 10 http://<IP_debian>/` hará que Apache Bench envíe 1000 peticiones HTTP al servidor web en la dirección http://<IP_debian>/, con 10 peticiones realizándose al mismo tiempo, simulando 10 usuarios concurrentes accediendo al servidor.***
 
 > NOTA: Reemplaza <IP_debian> con la dirección IP del servidor Debian.
+
 
 
 ### Paso 5: Monitoreo del Desempeño del Servidor
