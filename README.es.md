@@ -162,9 +162,9 @@ Veras algo como esto:
 * Load Average (Carga Media): Muestra el promedio de carga del sistema en los últimos 1, 5 y 15 minutos.
 * Uptime (Tiempo de Actividad): Indica cuánto tiempo ha estado funcionando el sistema desde el último reinicio.
 
-## Entrega
+## Entrega de proyecto
 
-* En el repositorio que se ha clonado entregar un informe con el nombre xxxxx que incluya las siguientes secciones:
+* En el repositorio que se ha clonado entregar un informe con el nombre `test_report_ab.yml` que incluya las siguientes secciones:
     * Descripción del entorno de prueba.
     * Resultados de las pruebas con Apache Benchmark.
     * Descripción de los parámetros utilizados 
@@ -172,7 +172,7 @@ Veras algo como esto:
     * Tiempo total de la prueba
     * Solicitudes por segundo
 
-* Crea un informe con el nombre xxxxx que incluya las observaciones del desempeño del servidor usando htop:
+* Crea un informe con el nombre `monitoring_report.yml` que incluya las observaciones del desempeño del servidor usando htop:
 
     * Incluye la captura de pantalla de htop durante la prueba de carga
     * Evalue si el servidor pudo manejar la carga de tráfico generada
