@@ -62,6 +62,29 @@ To carry out this project, we will need 2 virtual machines. One will be the Debi
 
 ![Configurar maquina virtual](assets/config-virtual-machine.png)
 
+### Step 2: Obtain the IP Address of the Machines to Connect Them.
+
+With "Bridged Adapter" configured, the machines should automatically obtain an IP address from your router or network's DHCP server.
+
+#### On the Debian Machine (Web Server):
+* Start the Debian virtual machine.
+* Open a terminal and execute the following command to view the assigned IP address:
+```bash
+$ ip addr show
+```
+> ***Look for the section corresponding to your network interface (usually `eth0` o `enp0s3`) and find the line that starts with inet. There you will see the assigned IP address, something like `192.168.1.x`.***
+
+#### On the Kali Linux Machine (Attacker):
+* Open a terminal and execute the following command to view the assigned IP address:
+* Abre una terminal y ejecuta el siguiente comando para ver la dirección IP asignada:
+
+```bash
+$ ip addr show
+```
+
+> ***Look for the section corresponding to your network interface (usually `eth0` o `enp0s3`) and find the line that starts with inet. There you will see the assigned IP address, something like `192.168.1.x`.***
+
+
 
 
 ### Step 3: Verify the Connection Between the Machines

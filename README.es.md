@@ -64,7 +64,7 @@ Para llevar a cabo este proyecto vamos a necesitar 2 maquinas virtuales. Una de 
 
 ### Paso 2: Obtener la Dirección IP de las Máquinas para poderlas conectar entre sí.
 
-Con "Adaptador puente" configurado, las máquinas deberían obtener una dirección IP automáticamente de tu router o servidor DHCP de la red.
+With "Bridged Adapter" configured, the machines should automatically obtain an IP address from your router or network's DHCP server.
 
 #### En la Máquina Debian (Servidor Web):
 * Inicia la máquina virtual Debian.
