@@ -12,7 +12,7 @@ This project seeks to generate artificial traffic from a Kali Linux machine to a
 [![build by developers](https://img.shields.io/badge/build_by-Developers-blue)](https://4geeks.com)
 [![build by developers](https://img.shields.io/twitter/follow/4geeksacademy?style=social&logo=twitter)](https://twitter.com/4geeksacademy)
 
-*These instructions are [available in english](https://github.com/4GeeksAcademy/deploying-wordpress-debian/blob/main/README.md)*
+*Estas instrucciones están [disponibles en Español](https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/README.es.md)*
 <!-- endhide -->
 
 <!-- hide -->
