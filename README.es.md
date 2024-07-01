@@ -37,51 +37,45 @@ Para llevar a cabo este proyecto vamos a necesitar 2 maquinas virtuales. Una de 
 
 #### Configurar la Red de la Máquina Debian (Servidor Web)
 
-- Abre VirtualBox.
-- Selecciona tu máquina virtual con Debian y haz clic en "Configuración".
-- Ve a la sección "Red".
-- [ ] Asegúrate de que el "Adaptador 1" esté habilitado y configurado como "Adaptador puente".
+- [ ] Abre VirtualBox.
+- [ ] Selecciona tu máquina virtual con Debian y haz clic en "Configuración".
+- [ ] Ve a la sección "Red" y asegúrate de que el "Adaptador 1" esté habilitado y configurado como "Adaptador puente".
 - [ ] En el campo "Nombre", selecciona el adaptador de red física que deseas usar (el que tu host está utilizando para conectarse a la red, como Wi-Fi o Ethernet). Esto suele ser algo como "Intel(R) Ethernet Connection" o "Wi-Fi".
-* Guarda los cambios y cierra la ventana de configuración.
+- [ ] Guarda los cambios y cierra la ventana de configuración.
 
 
 #### Configurar la Red de la Máquina Kali Linux (Atacante)
 
-* Selecciona tu máquina virtual con Kali Linux y haz clic en "Configuración".
-* Ve a la sección "Red".
-* Asegúrate de que el "Adaptador 1" esté habilitado y configurado como "Adaptador puente".
-* En el campo "Nombre", selecciona el mismo adaptador de red física que seleccionaste para la máquina Debian.
-* Guarda los cambios y cierra la ventana de configuración.
+- [ ] Selecciona tu máquina virtual con Kali Linux y haz clic en "Configuración".
+- [ ] Ve a la sección "Red" y asegúrate de que el "Adaptador 1" esté habilitado y configurado como "Adaptador puente".
+- [ ] En el campo "Nombre", selecciona **el mismo adaptador de red** física que seleccionaste para la máquina Debian.
+- [ ]  Guarda los cambios y cierra la ventana de configuración.
 
 ![Configurar maquina virtual](assets/config-virtual-machine.png)
 
 ### Paso 2: Obtener la Dirección IP de las Máquinas para poderlas conectar entre sí.
 
-With "Bridged Adapter" configured, the machines should automatically obtain an IP address from your router or network's DHCP server.
+Con "Bridged Adapter" configurado, las máquinas deberían obtener automáticamente una dirección IP de su router o del servidor DHCP de la red.
 
 #### En la Máquina Debian (Servidor Web):
-* Inicia la máquina virtual Debian.
-* Abre una terminal y ejecuta el siguiente comando para ver la dirección IP asignada:
-```bash
-$ ip addr show
-```
-> ***Busca la sección correspondiente a tu interfaz de red (usualmente `eth0` o `enp0s3`) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como `192.168.1.x`.***
 
-#### En la Máquina Kali Linux (Atacante):
-* Inicia la máquina virtual Kali Linux.
-* Abre una terminal y ejecuta el siguiente comando para ver la dirección IP asignada:
+- [ ] Inicia la máquina virtual Debian.
+- [ ] Abre una terminal y ejecuta el comando `$ ip addr show` para ver la dirección IP asignada:
 
-```bash
-$ ip addr show
-```
+Busca la sección correspondiente a tu interfaz de red (usualmente `eth0` o `enp0s3`) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como `192.168.1.x`.
 
-> ***Busca la sección correspondiente a tu interfaz de red (usualmente `eth0` o `enp0s3`) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como `192.168.1.x`.***
+#### En la Máquina Kali Linux (Atacante)
 
+- [ ] Inicia la máquina virtual Kali Linux.
+- [ ] Abre una terminal y ejecuta el comando `$ ip addr show` para ver la dirección IP asignada:
+
+Busca la sección correspondiente a tu interfaz de red (usualmente `eth0` o `enp0s3`) y encuentra la línea que dice inet. Ahí verás la dirección IP asignada, algo como `192.168.1.x`.
 
 ### PASO 3: Verificar la Conexión Entre las Máquinas
 
-#### Desde la Máquina Kali Linux (Atacante):
-* Abre una terminal y haz ping a la máquina Debian para verificar la conexión:
+#### Desde la Máquina Kali Linux (Atacante)
+
+- [ ] Abre una terminal y haz ping a la máquina Debian para verificar la conexión:
 
 ```bash
 $ ping <IP_debian>
@@ -89,8 +83,9 @@ $ ping <IP_debian>
 
 > Reemplaza <IP_debian> con la dirección IP que obtuviste para la máquina Debian.
 
-#### Desde la Máquina Debian (Servidor Web):
-* Abre una terminal y haz ping a la máquina Kali Linux para verificar la conexión:
+#### Desde la Máquina Debian (Servidor Web)
+
+- [ ] Abre una terminal y haz ping a la máquina Kali Linux para verificar la conexión:
 
 ```bash
 $ ping <IP_kali>
@@ -101,14 +96,16 @@ $ ping <IP_kali>
 Ejemplo gráfico de cómo se ven los ping al estar conectados
 ![verificación de conexión entre las maquinas virtuales](assets/ping-view.png)
 
-
 ### PASO 4: Simular Tráfico en el Sitio Web
 
-#### En la Máquina Kali Linux (Atacante):
+#### En la Máquina Kali Linux (Atacante)
+
 Usaremos como herramienta ab (Apache Benchmark) para generar tráfico en el sitio web. 
 
 #### Instalación y Uso de Apache Benchmark
-Apache Benchmark (ab) es una herramienta que permite generar tráfico de prueba hacia un servidor web. Sigue estos pasos para instalar y usar ab desde Kali Linux:
+
+Apache Benchmark (ab) es una herramienta que permite generar tráfico de prueba hacia un servidor web. Sigue estos pasos para instalar y usar AB desde Kali Linux:
+
 1. Instalación de Apache Benchmark
 
 ```bash
@@ -125,30 +122,29 @@ $ ab -n 1000 -c 10 http://<IP_debian>/
 
 > NOTA: Reemplaza <IP_debian> con la dirección IP del servidor Debian.
 
-
-
 ### Paso 5: Monitoreo del Desempeño del Servidor
+
 En el servidor Debian, vamos a instalar herramientas de monitoreo como htop para observar el desempeño durante las pruebas.
 
 #### Instalación de htop
+
 ```bash
 $ sudo apt-get update
 $ sudo apt-get install htop
 ```
 
-
-
 ### Monitoreo en Tiempo Real con htop
 
-`htop` es una herramienta interactiva de monitoreo de procesos que proporciona una visión detallada del uso de recursos del sistema. Ejecuta el siguiente comando la terminal para monitorear el uso de CPU, memoria y otros recursos del sistema en tiempo real mientras se ejecutan las pruebas con Apache Benchmark.
+`htop` es una herramienta interactiva de monitoreo de procesos que proporciona una visión detallada del uso de recursos del sistema. 
 
+- [ ] Ejecuta el siguiente comando la terminal para monitorear el uso de CPU, memoria y otros recursos del sistema en tiempo real mientras se ejecutan las pruebas con Apache Benchmark.
 
 ```bash
 $ htop
 ```
+
 Veras algo como esto:
 ![monitoreo con htop](assets/monitor-htop.png)
-
 
 * CPU Usage (Uso de CPU): Muestra el uso de la CPU en tiempo real, generalmente dividido en barras que representan cada núcleo de la CPU.
 * Memory Usage (Uso de Memoria): Muestra el uso de la memoria RAM y swap.
@@ -160,16 +156,13 @@ Veras algo como esto:
 
 En el repositorio que se ha clonado debes entregar 2 informes.
 
-
-* El primero con el nombre `report_ab.txt`. Este lo debes generar a la hora de hacer el ataque en tu maquina virtual kali, con el siguiente comando:
+- [ ] El primero con el nombre `report_ab.txt`. Este lo debes generar a la hora de hacer el ataque en tu maquina virtual kali, con el siguiente comando:
 
 ```bash
 $ ab -n 5000 -c 200 http://<IP_debian>/ > reporte_ab.txt
 ```
 
-
-* El segundo lo debes crear con el nombre `report_htop.txt` que incluya las observaciones del desempeño del servidor en tu maquina debian mientras usas htop. 
-
+- [ ] El segundo lo debes crear con el nombre `report_htop.txt` que incluya las observaciones del desempeño del servidor en tu maquina debian mientras usas htop. 
 
 > ***Copia estas lineas en el archivo `report_htop.txt` y llena lo que corresponda.***
 ```yml
@@ -188,10 +181,7 @@ $ ab -n 5000 -c 200 http://<IP_debian>/ > reporte_ab.txt
 
 ```
 
-
-
-
-
+<!-- hide -->
 ## Colaboradores
 
 Gracias a estas personas maravillosas ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
