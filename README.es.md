@@ -1,10 +1,9 @@
+<!-- hide -->
 # Simulación de trafico al sitio wordpress
-
+<!-- endhide -->
 Este proyecto tiene como objetivo generar tráfico artificial desde una máquina Kali Linux hacia un sitio web alojado en un servidor Debian, utilizando la herramienta Apache Benchmark (ab). Además, se implementarán herramientas de monitoreo en el servidor para detectar las oleadas de peticiones y evaluar su desempeño.
 
-
 <!-- hide -->
-
 > By [@rosinni](https://github.com/rosinni) and [other contributors](https://github.com/4GeeksAcademy/deploying-wordpress-debian/graphs/contributors) at [4Geeks Academy](https://4geeksacademy.co/)
 
 ![last commit](https://img.shields.io/github/last-commit/4geeksacademy/installing-kali-linux-on-virtual-machine)
@@ -12,25 +11,17 @@ Este proyecto tiene como objetivo generar tráfico artificial desde una máquina
 [![build by developers](https://img.shields.io/twitter/follow/4geeksacademy?style=social&logo=twitter)](https://twitter.com/4geeksacademy)
 
 *These instructions are [available in english](https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/README.md)*
-<!-- endhide -->
-
-
-<!-- hide -->
-
 
 ### Antes de empezar...
 
 > ¡Te necesitamos! Estos ejercicios se crean y mantienen en colaboración con personas como tú. Si encuentras algún error o falta de ortografía, contribuye y/o repórtalo.
-
 <!-- endhide -->
 
 ## 🌱 ¿Cómo empezar este proyecto?
 
 ### Instalación local:
 
-Clona el repositorio en tu ambiente local [repositorio](https://github.com/breatheco-de/traffic-simulation-on-wordpress) y sigue las instrucciones en el archivo readme.
-
-
+No clones ningún repositorio, solo sigue las siguientes instrucciones:
 
 ### Requisitos
 
@@ -44,16 +35,18 @@ Para llevar a cabo este proyecto vamos a necesitar 2 maquinas virtuales. Una de 
 
 ### Paso 1: Configurar la Red en VirtualBox
 
-#### Configurar la Red de la Máquina Debian (Servidor Web):
-* Abre VirtualBox.
-* Selecciona tu máquina virtual con Debian y haz clic en "Configuración".
-* Ve a la sección "Red".
-* Asegúrate de que el "Adaptador 1" esté habilitado y configurado como "Adaptador puente".
-* En el campo "Nombre", selecciona el adaptador de red física que deseas usar (el que tu host está utilizando para conectarse a la red, como Wi-Fi o Ethernet). Esto suele ser algo como "Intel(R) Ethernet Connection" o "Wi-Fi".
+#### Configurar la Red de la Máquina Debian (Servidor Web)
+
+- Abre VirtualBox.
+- Selecciona tu máquina virtual con Debian y haz clic en "Configuración".
+- Ve a la sección "Red".
+- [ ] Asegúrate de que el "Adaptador 1" esté habilitado y configurado como "Adaptador puente".
+- [ ] En el campo "Nombre", selecciona el adaptador de red física que deseas usar (el que tu host está utilizando para conectarse a la red, como Wi-Fi o Ethernet). Esto suele ser algo como "Intel(R) Ethernet Connection" o "Wi-Fi".
 * Guarda los cambios y cierra la ventana de configuración.
 
 
-#### Configurar la Red de la Máquina Kali Linux (Atacante):
+#### Configurar la Red de la Máquina Kali Linux (Atacante)
+
 * Selecciona tu máquina virtual con Kali Linux y haz clic en "Configuración".
 * Ve a la sección "Red".
 * Asegúrate de que el "Adaptador 1" esté habilitado y configurado como "Adaptador puente".
