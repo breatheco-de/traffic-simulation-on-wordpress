@@ -18,7 +18,7 @@ This project seeks to generate artificial traffic from a Kali Linux machine to a
 
 ## 🌱 How to start a project?
 
-Do not clone any repository!
+Do not clone any repository! Just follow instructions below:
 
 To carry out this project, we will need 2 virtual machines:
 
@@ -37,22 +37,19 @@ To carry out this project, we will need 2 virtual machines:
 
 #### Configure the Network of the Debian Machine (Web Server)
 
-* Open VirtualBox.
-* Select your Debian virtual machine and click on "Settings".
-* Go to the "Network" section.
-* Ensure that "Adapter 1" is enabled and set to "Bridged Adapter".
-* En el campo "Nombre", selecciona el adaptador de red física que deseas usar (el que tu host está utilizando para conectarse a la red, como Wi-Fi o Ethernet). Esto suele ser algo como "Intel(R) Ethernet Connection" o "Wi-Fi".
-* Save the changes and close the settings window.
+- [ ] Open VirtualBox.
+- [ ] Select your Debian virtual machine and click on "Settings".
+- [ ] Go to the "Network" section and ensure that "Adapter 1" is enabled and set to "Bridged Adapter".
+- [ ] En el campo "Nombre", selecciona el adaptador de red física que deseas usar (el que tu host está utilizando para conectarse a la red, como Wi-Fi o Ethernet). Esto suele ser algo como "Intel(R) Ethernet Connection" o "Wi-Fi".
+- [ ] Save the changes and close the settings window.
 
 
 #### Configure the Network of the Kali Linux Machine (Attacker)
 
-* Select your Kali Linux virtual machine and click on "Settings".
-* Go to the "Network" section.
-* Ensure that "Adapter 1" is enabled and set to "Bridged Adapter".
-* In the "Name" field, select the same physical network adapter you selected for the Debian machine.
-* Save the changes and close the settings window.
-
+- [ ] Select your Kali Linux virtual machine and click on "Settings".
+- [ ] Go to the "Network" section and ensure that "Adapter 1" is enabled and set to "Bridged Adapter".
+- [ ] In the "Name" field, select the same physical network adapter you selected for the Debian machine.
+- [ ] Save the changes and close the settings window.
 
 ![Configurar maquina virtual](assets/config-virtual-machine.png)
 
@@ -62,31 +59,23 @@ With "Bridged Adapter" configured, the machines should automatically obtain an I
 
 #### On the Debian Machine (Web Server)
 
-* Start the Debian virtual machine.
-* Open a terminal and execute the following command to view the assigned IP address:
+- [ ] Start the Debian virtual machine.
+- [ ] Open a terminal and execute the `$ ip addr show` command to view the assigned IP address:
   
-```bash
-$ ip addr show
-```
-
-> ***Look for the section corresponding to your network interface (usually `eth0` o `enp0s3`) and find the line that starts with inet. There you will see the assigned IP address, something like `192.168.1.x`.***
+Look for the section corresponding to your network interface (usually `eth0` o `enp0s3`) and find the line that starts with inet. There you will see the assigned IP address, something like `192.168.1.x`.
 
 #### On the Kali Linux Machine (Attacker)
 
-* Open a terminal and execute the following command to view the assigned IP address:
-* Abre una terminal y ejecuta el siguiente comando para ver la dirección IP asignada:
+- [ ] Open a terminal and execute the `$ ip addr show` command to view the assigned IP address:
 
-```bash
-$ ip addr show
-```
-
-> ***Look for the section corresponding to your network interface (usually `eth0` o `enp0s3`) and find the line that starts with inet. There you will see the assigned IP address, something like `192.168.1.x`.***
+Look for the section corresponding to your network interface (usually `eth0` o `enp0s3`) and find the line that starts with inet. There you will see the assigned IP address, something like `192.168.1.x`.
 
 
 ### Step 3: Verify the Connection Between the Machines
 
 #### From the Kali Linux Machine (Attacker):
-* Open a terminal and ping the Debian machine to verify the connection:
+
+- [ ] Open a terminal and ping the Debian machine to verify the connection:
 
 ```bash
 $ ping <IP_debian>
@@ -95,7 +84,8 @@ $ ping <IP_debian>
 > Replace <IP_debian> with the IP address you obtained for the Debian machine.
 
 #### From the Debian Machine (Web Server): 
-* Open a terminal and ping the Kali Linux machine to verify the connection:
+
+- [ ] Open a terminal and ping the Kali Linux machine to verify the connection:
 
 ```bash
 $ ping <IP_kali>
@@ -109,10 +99,10 @@ Graphical example of how the pings look when connected:
 ### Step 4: Simulate Traffic on the Website
 
 #### On the Kali Linux Machine (Attacker):
-We will use Apache Benchmark (ab) as a tool to generate traffic on the website.
+We will use Apache Benchmark (AB) as a tool to generate traffic on the website.
 
 #### Installation and Usage of Apache Benchmark
-Apache Benchmark (ab) is a tool that allows you to generate test traffic to a web server. Follow these steps to install and use ab from Kali Linux:
+Apache Benchmark (AB) is a tool that allows you to generate test traffic to a web server. Follow these steps to install and use ab from Kali Linux:
 1. Installation of Apache Benchmark
 
 ```bash
@@ -141,7 +131,9 @@ $ sudo apt-get install htop
 
 #### Real-Time Monitoring with htop
 
-`htop` is an interactive process monitoring tool that provides a detailed view of the system resource usage. Run the following command in the terminal to monitor CPU, memory, and other system resources in real-time while running tests with Apache Benchmark.
+`htop` is an interactive process monitoring tool that provides a detailed view of the system resource usage. 
+
+- [ ] Run the following command in the terminal to monitor CPU, memory, and other system resources in real-time while running tests with Apache Benchmark.
 
 ```bash
 $ htop
@@ -160,13 +152,13 @@ You will see something like this:
 
 In the cloned repository, you must submit 2 reports.
 
-* The first report should be named `report_ab.txt`. Generate this report when performing the attack on your Kali virtual machine with the following command:
+- [ ] The first report should be named `report_ab.txt`. Generate this report when performing the attack on your Kali virtual machine with the following command:
 
 ```bash
 $ ab -n 5000 -c 200 http://<IP_debian>/ > report_ab.txt
 ```
 
-* The second report should be created with the name `report_htop.txt` and include observations on the server performance on your Debian machine while using htop.
+- [ ] The second report should be created with the name `report_htop.txt` and include observations on the server performance on your Debian machine while using htop.
 
 > ***Copy these lines into the `report_htop.txt` file and fill in the corresponding information.***
 
