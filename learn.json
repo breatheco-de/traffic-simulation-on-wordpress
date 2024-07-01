@@ -10,7 +10,7 @@
       "es": "Aprende como generar tráfico artificial en el sitio Wordpress e implementa herramientas de monitoreo para detectar las oleadas de peticiones y evaluar el desempeño del servidor."
     },
     "grading": "isolated",
-    "repository": "https://github.com/4GeeksAcademy/iptables-blocking-practice",
+    "repository": "https://github.com/breatheco-de/traffic-simulation-on-wordpress",
     "duration": 2,
     "difficulty": "intermediate",
     "videoSolutions": true,
