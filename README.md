@@ -1,10 +1,5 @@
-# Traffic simulation on the wordpress site
-
-This project seeks to generate artificial traffic from a Kali Linux machine to a website hosted on a Debian server using the Apache Benchmark (ab) tool. Additionally, monitoring tools will be implemented on the server to detect traffic surges and evaluate its performance.
-
 <!-- hide -->
-<a href="https://www.4geeksacademy.co"><img height="280" align="right" src="https://github.com/4GeeksAcademy/deploying-wordpress-debian/blob/master/js-bg-badge.png"></a>
-
+# Traffic simulation on the wordpress site
 
 > By [@rosinni](https://github.com/rosinni) at [4Geeks Academy](https://4geeksacademy.co/)
 
@@ -12,27 +7,25 @@ This project seeks to generate artificial traffic from a Kali Linux machine to a
 [![build by developers](https://img.shields.io/twitter/follow/4geeksacademy?style=social&logo=twitter)](https://twitter.com/4geeksacademy)
 
 *Estas instrucciones están [disponibles en Español](https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/README.es.md)*
-<!-- endhide -->
 
-<!-- hide -->
 ### Before you start...
 
 > We need you! These exercises are built and maintained in collaboration with contributors such as yourself. If you find any bugs or misspellings please contribute and/or report them.
+
 <!-- endhide -->
 
-<!-- hide -->
-
+This project seeks to generate artificial traffic from a Kali Linux machine to a website hosted on a Debian server using the Apache Benchmark (ab) tool. Additionally, monitoring tools will be implemented on the server to detect traffic surges and evaluate its performance.
 
 ## 🌱 How to start a project?
 
+Do not clone any repository!
 
-### Local Installation:
-Clone the repository to your local environment [repository](https://github.com/breatheco-de/traffic-simulation-on-wordpress) and follow the instructions in the README file.
+To carry out this project, we will need 2 virtual machines:
 
+- One will be the Debian virtual machine where we previously built [the WordPress website](https://4geeks.com/interactive-exercise/deploying-wordpress-site-debian).
+- The other will be the Kali virtual machine as the attacker. If you have not installed Kali Linux yet, please follow these instructions: [Installing Kali Linux on a virtual machine](https://github.com/breatheco-de/installing-kali-linux-on-virtual-machine).
 
 ### Requirements
-
-To carry out this project, we will need 2 virtual machines. One will be the Debian virtual machine where we previously built the WordPress website, and the other will be the Kali virtual machine as the attacker.
 
 * Oracle VirtualBox
 * Virtual machine with Kali Linux (Attacker): To generate traffic.
@@ -42,7 +35,8 @@ To carry out this project, we will need 2 virtual machines. One will be the Debi
 
 ### Step 1: Configure the Network in VirtualBox
 
-#### Configure the Network of the Debian Machine (Web Server):
+#### Configure the Network of the Debian Machine (Web Server)
+
 * Open VirtualBox.
 * Select your Debian virtual machine and click on "Settings".
 * Go to the "Network" section.
@@ -51,7 +45,8 @@ To carry out this project, we will need 2 virtual machines. One will be the Debi
 * Save the changes and close the settings window.
 
 
-#### Configure the Network of the Kali Linux Machine (Attacker):
+#### Configure the Network of the Kali Linux Machine (Attacker)
+
 * Select your Kali Linux virtual machine and click on "Settings".
 * Go to the "Network" section.
 * Ensure that "Adapter 1" is enabled and set to "Bridged Adapter".
@@ -65,15 +60,19 @@ To carry out this project, we will need 2 virtual machines. One will be the Debi
 
 With "Bridged Adapter" configured, the machines should automatically obtain an IP address from your router or network's DHCP server.
 
-#### On the Debian Machine (Web Server):
+#### On the Debian Machine (Web Server)
+
 * Start the Debian virtual machine.
 * Open a terminal and execute the following command to view the assigned IP address:
+  
 ```bash
 $ ip addr show
 ```
+
 > ***Look for the section corresponding to your network interface (usually `eth0` o `enp0s3`) and find the line that starts with inet. There you will see the assigned IP address, something like `192.168.1.x`.***
 
-#### On the Kali Linux Machine (Attacker):
+#### On the Kali Linux Machine (Attacker)
+
 * Open a terminal and execute the following command to view the assigned IP address:
 * Abre una terminal y ejecuta el siguiente comando para ver la dirección IP asignada:
 
@@ -82,8 +81,6 @@ $ ip addr show
 ```
 
 > ***Look for the section corresponding to your network interface (usually `eth0` o `enp0s3`) and find the line that starts with inet. There you will see the assigned IP address, something like `192.168.1.x`.***
-
-
 
 
 ### Step 3: Verify the Connection Between the Machines
@@ -172,6 +169,7 @@ $ ab -n 5000 -c 200 http://<IP_debian>/ > report_ab.txt
 * The second report should be created with the name `report_htop.txt` and include observations on the server performance on your Debian machine while using htop.
 
 > ***Copy these lines into the `report_htop.txt` file and fill in the corresponding information.***
+
 ```yml
   observations:
   evaluation_if_server_could_handle_load:
@@ -186,11 +184,6 @@ $ ab -n 5000 -c 200 http://<IP_debian>/ > report_ab.txt
         - request_count_at_peak:
             - value:  # Here you can note the specific number of requests at which the peak occurred
 ```
-
-
-
-
-
 
 <!-- hide -->
 ## Contributors
