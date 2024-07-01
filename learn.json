@@ -1,27 +1,17 @@
 {
-    "language": "node",
     "title": {
-      "us": "traffic-simulation-on-wordpress",
-      "es": "Simulación de trafico en wordpress"
+      "us": "Example Traffic Simulation on Wordpress using Apache Benchmark",
+      "es": "Ejemplo de simulación de trafico en WordPress usando Apache Benchmark"
     },
     "slug": "traffic-simulation-on-wordpress",
     "description": {
       "us": "Learn how to generate artificial traffic on the WordPress site and implement monitoring tools to detect surges in requests and evaluate server performance.",
       "es": "Aprende como generar tráfico artificial en el sitio Wordpress e implementa herramientas de monitoreo para detectar las oleadas de peticiones y evaluar el desempeño del servidor."
     },
-    "grading": "isolated",
+    "preview": "https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/assets/preview-traffic.png?raw=true",
     "repository": "https://github.com/breatheco-de/traffic-simulation-on-wordpress",
     "duration": 2,
     "difficulty": "intermediate",
-    "videoSolutions": true,
-    "projectType": "tutorial",
     "bugsLink": "https://github.com/learnpack/learnpack/issues/new",
-    "skills": ["cybersecurity","ciberseguridad","network"],
-    "graded": true,
-    "editor": {
-      "version": "3.1.23"
-    },
-    "telemetry": {
-      "batch": "https://breathecode.herokuapp.com/v1/assignment/me/telemetry"
-    }
+    "skills": ["network", "wordpress", "cybersecurity","ciberseguridad"],
   }
