@@ -13,5 +13,6 @@
     "duration": 2,
     "difficulty": "intermediate",
     "bugsLink": "https://github.com/learnpack/learnpack/issues/new",
-    "technologies": ["network", "wordpress", "cybersecurity","ciberseguridad"]
+    "technologies": ["network", "wordpress", "cybersecurity","ciberseguridad"],
+    "localhostOnly": true
   }
