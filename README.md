@@ -51,7 +51,7 @@ To carry out this project, we will need 2 virtual machines:
 - [ ] In the "Name" field, select the same physical network adapter you selected for the Debian machine.
 - [ ] Save the changes and close the settings window.
 
-![Configurar maquina virtual](assets/config-virtual-machine.png)
+![Configurar maquina virtual](https://raw.githubusercontent.com/breatheco-de/traffic-simulation-on-wordpress/main/assets/config-virtual-machine.png)
 
 ### Step 2: Obtain the IP Address of the Machines to Connect Them.
 
@@ -93,7 +93,7 @@ $ ping <IP_kali>
 > Replace <IP_kali> with the IP address you obtained for the Kali machine.
 
 Graphical example of how the pings look when connected:
-![Graphical example of how the pings look when connected:](assets/ping-view.png)
+![Graphical example of how the pings look when connected:](https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/assets/ping-view.png)
 
 
 ### Step 4: Simulate Traffic on the Website
@@ -139,7 +139,7 @@ $ sudo apt-get install htop
 $ htop
 ```
 You will see something like this:
-![monitoreo con htop](assets/monitor-htop.png)
+![monitoreo con htop](https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/assets/monitor-htop.png?raw=true)
 
 
 * **CPU Usage**: Shows real-time CPU usage, usually divided into bars representing each CPU core.
