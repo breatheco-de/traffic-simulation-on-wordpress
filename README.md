@@ -16,6 +16,8 @@
 
 This project seeks to generate artificial traffic from a Kali Linux machine to a website hosted on a Debian server using the Apache Benchmark (ab) tool. Additionally, monitoring tools will be implemented on the server to detect traffic surges and evaluate its performance.
 
+<onlyfor saas="true" withBanner="true">
+
 ## 🌱 How to start a project?
 
 Do not clone any repository! Just follow instructions below:
@@ -30,6 +32,8 @@ To carry out this project, we will need 2 virtual machines:
 * Oracle VirtualBox
 * Virtual machine with Kali Linux (Attacker): To generate traffic.
 * Virtual machine with Debian (Web Server): Where we have the Apache server and the WordPress site hosted.
+
+</onlyfor>
 
 ## 📝 Instructions
 
