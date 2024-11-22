@@ -13,7 +13,7 @@
     "duration": 2,
     "difficulty": "intermediate",
     "bugsLink": "https://github.com/learnpack/learnpack/issues/new",
-    "technologies": ["network", "wordpress", "cybersecurity","ciberseguridad"],
+    "technologies": ["network", "wordpress", "cybersecurity","ciberseguridad", "redes"],
 	"delivery": {
 		"instructions": {
 			"us": "Create a text document with the answers to the questions in the instructions",
