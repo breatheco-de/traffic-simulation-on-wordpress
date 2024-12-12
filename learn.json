@@ -11,6 +11,7 @@
     "preview": "https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/assets/preview-traffic.png?raw=true",
     "repository": "https://github.com/breatheco-de/traffic-simulation-on-wordpress",
     "duration": 2,
+    "projectType": "project",
     "difficulty": "intermediate",
     "bugsLink": "https://github.com/learnpack/learnpack/issues/new",
     "technologies": ["network", "wordpress", "cybersecurity","ciberseguridad", "redes"],
