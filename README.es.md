@@ -51,7 +51,7 @@ Para llevar a cabo este proyecto vamos a necesitar 2 maquinas virtuales. Una de 
 - [ ] En el campo "Nombre", selecciona **el mismo adaptador de red** física que seleccionaste para la máquina Debian.
 - [ ]  Guarda los cambios y cierra la ventana de configuración.
 
-![Configurar maquina virtual](https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/assets/config-virtual-machine.pngg)
+![Configurar maquina virtual](https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/assets/config-virtual-machine.png)
 
 ### Paso 2: Obtener la Dirección IP de las Máquinas para poderlas conectar entre sí.
 
