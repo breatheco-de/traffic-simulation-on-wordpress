@@ -5,12 +5,13 @@
     },
     "slug": "traffic-simulation-on-wordpress",
     "description": {
-      "us": "Learn how to generate artificial traffic on the WordPress site and implement monitoring tools to detect surges in requests and evaluate server performance.",
-      "es": "Aprende como generar tráfico artificial en el sitio Wordpress e implementa herramientas de monitoreo para detectar las oleadas de peticiones y evaluar el desempeño del servidor."
+      "us": "Simulate WordPress traffic & monitor server performance. Use Kali Linux to generate artificial traffic with Apache Benchmark, then analyze Debian server response with htop. Track request surges & resource usage to evaluate server limits. Perfect for learning network testing & server monitoring. Submit detailed performance reports.",
+      "es": "Simula tráfico en WordPress y monitorea el rendimiento del servidor. Usa Kali Linux para generar tráfico artificial con Apache Benchmark, luego analiza la respuesta del servidor Debian con htop. Rastrea picos de solicitudes y uso de recursos para evaluar los límites del servidor. Perfecto para aprender pruebas de red y monitoreo de servidores. Envía informes detallados de rendimiento."
     },
     "preview": "https://github.com/breatheco-de/traffic-simulation-on-wordpress/blob/main/assets/preview-traffic.png?raw=true",
     "repository": "https://github.com/breatheco-de/traffic-simulation-on-wordpress",
     "duration": 2,
+    "projectType": "project",
     "difficulty": "intermediate",
     "bugsLink": "https://github.com/learnpack/learnpack/issues/new",
     "technologies": ["network", "wordpress", "cybersecurity","ciberseguridad", "redes"],
@@ -20,5 +21,8 @@
 			"es": "Adjunta un documento con las respuestas a las preguntas"
 		},
 		"formats": ["application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain"]
-	}
+	},
+	"telemetry": {
+		"batch": "https://breathecode.herokuapp.com/v1/assignment/me/telemetry?asset_id=1771"
+		}
 }

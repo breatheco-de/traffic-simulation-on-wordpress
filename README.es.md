@@ -1,6 +1,7 @@
 <!-- hide -->
 # Simulación de trafico al sitio wordpress
 <!-- endhide -->
+
 Este proyecto tiene como objetivo generar tráfico artificial desde una máquina Kali Linux hacia un sitio web alojado en un servidor Debian, utilizando la herramienta Apache Benchmark (ab). Además, se implementarán herramientas de monitoreo en el servidor para detectar las oleadas de peticiones y evaluar su desempeño.
 
 <!-- hide -->
